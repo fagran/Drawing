@@ -6,7 +6,39 @@ using System.Threading.Tasks;
 
 namespace Drawing
 {
-    internal class Triangle
+    public class Triangle
     {
+        //Атрибуты класса
+        private Point2D p1;
+        private Point2D p2;
+        private Point2D p3;
+        //Конструктор класса
+        public Triangle(Point2D p1, Point2D p2, Point2D p3)
+        {
+            this.p1 = p1;
+            this.p2 = p2;
+            this.p3 = p3;
+        }
+        public Point2D P1
+        {
+            get
+            {
+                return p1;
+            }
+        }
+        public Point2D P2
+        {
+            get
+            {
+                return p2;
+            }
+        }
+        public Point2D P3
+        {
+            get
+            {
+                return p3;
+            }
+        }
     }
 }
