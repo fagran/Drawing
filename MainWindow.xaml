@@ -26,8 +26,8 @@
         <Label Grid.Row="1" Content="Сдвиг по X:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="23"/>
         <Label Grid.Row="2" Content="Сдвиг по Y:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="23"/>
 
-        <Slider Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350"/>
-        <Slider Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350"/>
+        <Slider Name="SliderX" Minimum="0"  Maximum="630" TickFrequency="1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350"/>
+        <Slider Name="SliderY" Minimum="0"  Maximum="630" TickFrequency="1" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350"/>
 
         <Canvas x:Name="Scene" Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="340" Width="630" Background="LightGray"/>
     </Grid>
