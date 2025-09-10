@@ -6,8 +6,43 @@ using System.Threading.Tasks;
 
 namespace Drawing
 {
-    internal class Point2D
+    public class Point2D
     {
+        //Атрибуты класса
+        private int x;
+        private int y;
+        //Конструктор класса
+        public Point2D(int x, int y)
+        {
+            /*this используется для однозначного указания на атрибуты класса так как
+            переменные имеют одинаковые имена*/
+            this.x = x;
+            this.y = y;
+        }
 
+        //Методы для получения координат
+        public int X
+        {
+            get
+            {
+                return x;
+            }
+        }
+        public int Y
+        {
+            get
+            {
+                return y
+            }
+        }
+        //Методы для изменения координат
+        public void addX(int x)
+        {
+            x+= x;
+        }
+        public void addY(int y)
+        {
+            y+= y;
+        }
     }
 }
