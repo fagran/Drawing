@@ -32,7 +32,7 @@ namespace Drawing
         {
             get
             {
-                return y
+                return y;
             }
         }
         //Методы для изменения координат
