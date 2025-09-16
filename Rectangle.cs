@@ -54,12 +54,14 @@ namespace Drawing
             p1.addX(X);
             p2.addX(X);
             p3.addX(X);
+            p4.addX(X);
         }
         public void addY(int Y)
         {
             p1.addY(Y);
             p2.addY(Y);
             p3.addY(Y);
+            p4.addY(Y);
         }
     }
 }

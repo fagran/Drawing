@@ -19,12 +19,11 @@ namespace Drawing
     {
         Triangle tr;
         Rectangle rec;
+        bool last;
         Random rnd = new Random();
         public MainWindow()
         {
             InitializeComponent();
-
-            
 
         }
 
@@ -45,6 +44,7 @@ namespace Drawing
         }
         public void DrawTriangle(object sender, RoutedEventArgs e)
         {
+            last = false;
             ClearScene();
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -58,6 +58,7 @@ namespace Drawing
 
         public void DrawRect(object sender, RoutedEventArgs e)
         {
+            last = true;
             ClearScene();
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), p1.Y);
@@ -73,6 +74,7 @@ namespace Drawing
 
         public void DrawSqr(object sender, RoutedEventArgs e)
         {
+            last = true;
             ClearScene();
             Point2D p1 = new Point2D(0, 0);
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), 0);
@@ -85,11 +87,54 @@ namespace Drawing
             DrawLine(rec.P3, rec.P4);
             DrawLine(rec.P2, rec.P4);
         }
+
+
         public void ClearScene()
         {
             //Очистка Canvas от всех объектов
             Scene.Children.Clear();
         }
 
+        private void SliderX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (last == true)
+            {
+                rec.addX((int)SliderX.Value);
+                ClearScene();
+                DrawLine(rec.P1, rec.P2);
+                DrawLine(rec.P1, rec.P3);
+                DrawLine(rec.P3, rec.P4);
+                DrawLine(rec.P2, rec.P4);
+            }
+            if(last == false)
+            {
+                tr.addX((int)SliderX.Value);
+                ClearScene();
+                DrawLine(tr.P1, tr.P2);
+                DrawLine(tr.P2, tr.P3);
+                DrawLine(tr.P3, tr.P1);
+            }
+        }
+
+        private void SliderY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (last == true)
+            {
+                rec.addY((int)SliderY.Value);
+                ClearScene();
+                DrawLine(rec.P1, rec.P2);
+                DrawLine(rec.P1, rec.P3);
+                DrawLine(rec.P3, rec.P4);
+                DrawLine(rec.P2, rec.P4);
+            }
+            if(last == false)
+            {
+                tr.addY((int)SliderY.Value);
+                ClearScene();
+                DrawLine(tr.P1, tr.P2);
+                DrawLine(tr.P2, tr.P3);
+                DrawLine(tr.P3, tr.P1);
+            }
+        }
     }
 }
