@@ -18,6 +18,7 @@ namespace Drawing
     public partial class MainWindow : Window
     {
         Triangle tr;
+        Rectangle rec;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -53,6 +54,36 @@ namespace Drawing
             DrawLine(tr.P1, tr.P2);
             DrawLine(tr.P2, tr.P3);
             DrawLine(tr.P3, tr.P1);
+        }
+
+        public void DrawRect(object sender, RoutedEventArgs e)
+        {
+            ClearScene();
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), p1.Y);
+            Point2D p3 = new Point2D(p1.X, rnd.Next(0, (int)Scene.Height));
+            Point2D p4 = new Point2D(p2.X, p3.Y);
+            rec = new Rectangle(p1, p2, p3,p4);
+            //Отрисовка прямоугольника с помощью функции отрисовки линии
+            DrawLine(rec.P1, rec.P2);
+            DrawLine(rec.P1, rec.P3);
+            DrawLine(rec.P3, rec.P4);
+            DrawLine(rec.P2, rec.P4);
+        }
+
+        public void DrawSqr(object sender, RoutedEventArgs e)
+        {
+            ClearScene();
+            Point2D p1 = new Point2D(0, 0);
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), 0);
+            Point2D p3 = new Point2D(0, p2.X);
+            Point2D p4 = new Point2D(p2.X, p3.Y);
+            rec = new Rectangle(p1, p2, p3, p4);
+            //Отрисовка прямоугольника с помощью функции отрисовки линии
+            DrawLine(rec.P1, rec.P2);
+            DrawLine(rec.P1, rec.P3);
+            DrawLine(rec.P3, rec.P4);
+            DrawLine(rec.P2, rec.P4);
         }
         public void ClearScene()
         {
