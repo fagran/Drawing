@@ -54,6 +54,9 @@ namespace Drawing
             DrawLine(tr.P1, tr.P2);
             DrawLine(tr.P2, tr.P3);
             DrawLine(tr.P3, tr.P1);
+
+            SliderX.Maximum = tr.P2.X - tr.P1.X;
+            SliderY.Maximum = tr.P3.Y - tr.P1.Y;
         }
 
         public void DrawRect(object sender, RoutedEventArgs e)
@@ -86,6 +89,12 @@ namespace Drawing
             DrawLine(rec.P1, rec.P3);
             DrawLine(rec.P3, rec.P4);
             DrawLine(rec.P2, rec.P4);
+
+            SliderX.Value = 0;
+            SliderY.Value = 0;
+
+            SliderX.Maximum = 500 - (rec.P2.X - rec.P1.X);
+            SliderY.Maximum = 500 - (rec.P3.Y - rec.P1.Y);
         }
 
 
