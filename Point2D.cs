@@ -36,13 +36,13 @@ namespace Drawing
             }
         }
         //Методы для изменения координат
-        public void addX(int x)
+        public void addX(int X)
         {
-            x+= x;
+            x+= X;
         }
-        public void addY(int y)
+        public void addY(int Y)
         {
-            y+= y;
+            y+= Y;
         }
     }
 }

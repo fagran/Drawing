@@ -38,8 +38,8 @@
         <Label Grid.Row="1" Content="Сдвиг по X:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="23"/>
         <Label Grid.Row="2" Content="Сдвиг по Y:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="23"/>
 
-        <Slider Name="SliderX" Minimum="0"  Maximum="630" TickFrequency="1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350" ValueChanged="SliderX_ValueChanged"/>
-        <Slider Name="SliderY" Minimum="0"  Maximum="340" TickFrequency="1" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350" ValueChanged="SliderY_ValueChanged"/>
+        <Slider Name="SliderX" Minimum="0"  Maximum="500" TickFrequency="1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350" ValueChanged="SliderX_ValueChanged"/>
+        <Slider Name="SliderY" Minimum="0"  Maximum="500" TickFrequency="1" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="350" ValueChanged="SliderY_ValueChanged"/>
 
         <Canvas x:Name="Scene" Grid.ColumnSpan="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="500" Width="500" Background="LightGray"/>
         

@@ -97,18 +97,21 @@ namespace Drawing
 
         private void SliderX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+
+            int a = (int)(e.NewValue - e.OldValue);
+
             if (last == true)
             {
-                rec.addX((int)SliderX.Value);
+                rec.addX(a);
                 ClearScene();
                 DrawLine(rec.P1, rec.P2);
                 DrawLine(rec.P1, rec.P3);
                 DrawLine(rec.P3, rec.P4);
                 DrawLine(rec.P2, rec.P4);
             }
-            if(last == false)
+            else if(last == false)
             {
-                tr.addX((int)SliderX.Value);
+                tr.addX(a);
                 ClearScene();
                 DrawLine(tr.P1, tr.P2);
                 DrawLine(tr.P2, tr.P3);
@@ -118,18 +121,20 @@ namespace Drawing
 
         private void SliderY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            int a = (int)(e.NewValue - e.OldValue);
+
             if (last == true)
             {
-                rec.addY((int)SliderY.Value);
+                rec.addY(a);
                 ClearScene();
                 DrawLine(rec.P1, rec.P2);
                 DrawLine(rec.P1, rec.P3);
                 DrawLine(rec.P3, rec.P4);
                 DrawLine(rec.P2, rec.P4);
             }
-            if(last == false)
+            else if(last == false)
             {
-                tr.addY((int)SliderY.Value);
+                tr.addY(a);
                 ClearScene();
                 DrawLine(tr.P1, tr.P2);
                 DrawLine(tr.P2, tr.P3);
